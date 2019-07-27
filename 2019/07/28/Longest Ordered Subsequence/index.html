@@ -99,13 +99,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="从零开始的ACM之路">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="POJ 2533 题目解答">
+<meta name="keywords" content="动态规划&#x2F;DP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Longest Ordered Subsequence">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/Longest Ordered Subsequence/index.html">
 <meta property="og:site_name" content="从零开始的ACM之路">
+<meta property="og:description" content="POJ 2533 题目解答">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-27T18:11:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从零开始的ACM之路">
+<meta name="twitter:title" content="Longest Ordered Subsequence">
+<meta name="twitter:description" content="POJ 2533 题目解答">
 
 
 
@@ -113,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/28/Longest Ordered Subsequence/">
 
 
 
@@ -124,7 +129,7 @@
 </script>
 
   
-  <title>从零开始的ACM之路</title>
+  <title>Longest Ordered Subsequence | 从零开始的ACM之路</title>
   
 
 
@@ -172,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,7 +215,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -315,9 +319,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-        
+
+  <div id="posts" class="posts-expand">
+      
 
   
   
@@ -347,10 +351,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/28/Longest Ordered Subsequence/" class="post-title-link" itemprop="url">Longest Ordered Subsequence</a>
+          <h1 class="post-title" itemprop="name headline">Longest Ordered Subsequence
+
               
             
           </h1>
@@ -415,6 +417,8 @@
           
 
           
+            <div class="post-description">POJ 2533 题目解答</div>
+          
 
         </div>
       </header>
@@ -429,23 +433,29 @@
       
 
       
-        
-          POJ 2533 题目解答
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/28/Longest Ordered Subsequence/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <h1 id="Longest-Ordered-Subsequence-（POJ-2533）"><a href="#Longest-Ordered-Subsequence-（POJ-2533）" class="headerlink" title="Longest Ordered Subsequence  （POJ 2533）"></a>Longest Ordered Subsequence  （POJ 2533）</h1><p>A numeric sequence of ai is ordered if a1 &lt; a2 &lt; … &lt; aN. Let the subsequence of the given numeric sequence ( a1, a2, …, aN) be any sequence ( ai1, ai2, …, aiK), where 1 &lt;= i1 &lt; i2 &lt; … &lt; iK &lt;= N. For example, sequence (1, 7, 3, 5, 9, 4, 8) has ordered subsequences, e. g., (1, 7), (3, 4, 8) and many others. All longest ordered subsequences are of length 4, e. g., (1, 3, 5, 8). </p>
+<p>Your program, when given the numeric sequence, must find the length of its longest ordered subsequence.<br>Input<br>The first line of input file contains the length of sequence N. The second line contains the elements of sequence - N integers in the range from 0 to 10000 each, separated by spaces. 1 &lt;= N &lt;= 1000<br>Output<br>Output file must contain a single integer - the length of the longest ordered subsequence of the given sequence.<br>Sample Input</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">1 7 3 5 9 4 8</span><br></pre></td></tr></table></figure>
+
+<p>Sample Output</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="最长上升子序列-LIS-—简单DP-动态规划"><a href="#最长上升子序列-LIS-—简单DP-动态规划" class="headerlink" title="最长上升子序列(LIS)—简单DP(动态规划)"></a>最长上升子序列(LIS)—简单DP(动态规划)</h2><h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求:"></a>题目要求:</h3><pre><code>给定:一组数列
+求解该数列递增(可以非连续)的最大数字数</code></pre><h3 id="考察要点-简单DP-树状数组"><a href="#考察要点-简单DP-树状数组" class="headerlink" title="考察要点:简单DP / 树状数组"></a>考察要点:简单DP / 树状数组</h3><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路:"></a>解题思路:</h3><pre><code>(1):简单DP
+    通过数组记录当前最大的递增数字数求解
+(2):树状数组</code></pre><h3 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h3><pre><code>最种解不是数组记录的最后一个值
+应为数组记录的最大的一个值</code></pre><hr>
+<h2 id="AC代码："><a href="#AC代码：" class="headerlink" title="AC代码："></a>AC代码：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#define number 1000+1</span></span><br><span class="line"><span class="comment">#define max(x,y) x&gt;y?x:y</span></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,i,j,max;</span><br><span class="line">	int a[number],f[number]=&#123;0&#125;;</span><br><span class="line">	</span><br><span class="line">	scanf(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">		scanf(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=i;j&gt;=0;j--)</span><br><span class="line">			<span class="keyword">if</span>(a[j]&lt;a[i])</span><br><span class="line">				f[i]=max(f[i],f[j]+1);</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">for</span>(i=1;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">if</span>(f[i]&gt;max)</span><br><span class="line">			max=f[i];</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,max+1);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
     
 
+    
+      
     
 
     
@@ -463,187 +473,39 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
         
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/Coins/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Crossing_Star">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="从零开始的ACM之路">
-    </span>
-
-    
-      <header class="post-header">
-
+          
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/27/Coins/" class="post-title-link" itemprop="url">Coins</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
+        <div class="post-tags">
           
+            <a href="/tags/动态规划-DP/" rel="tag"># 动态规划/DP</a>
           
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-07-27 20:10:39" itemprop="dateCreated datePublished" datetime="2019-07-27T20:10:39+08:00">2019-07-27</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-28 00:52:42" itemprop="dateModified" datetime="2019-07-28T00:52:42+08:00">2019-07-28</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HDU/" itemprop="url" rel="index"><span itemprop="name">HDU</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          HDU 2844 题目解答
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/27/Coins/">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/27/Coins/" rel="next" title="Coins">
+                <i class="fa fa-chevron-left"></i> Coins
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -652,14 +514,14 @@
   
   </article>
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+  
+
+
 
         </div>
         
@@ -679,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -760,6 +631,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Longest-Ordered-Subsequence-（POJ-2533）"><span class="nav-number">1.</span> <span class="nav-text">Longest Ordered Subsequence  （POJ 2533）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最长上升子序列-LIS-—简单DP-动态规划"><span class="nav-number">1.1.</span> <span class="nav-text">最长上升子序列(LIS)—简单DP(动态规划)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目要求"><span class="nav-number">1.1.1.</span> <span class="nav-text">题目要求:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#考察要点-简单DP-树状数组"><span class="nav-number">1.1.2.</span> <span class="nav-text">考察要点:简单DP / 树状数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">1.1.3.</span> <span class="nav-text">解题思路:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">1.1.4.</span> <span class="nav-text">注意:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码："><span class="nav-number">1.2.</span> <span class="nav-text">AC代码：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -883,6 +771,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
